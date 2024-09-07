@@ -1,3 +1,4 @@
+flask
 langchain
 google-generativeai
 youtube_transcript_api
