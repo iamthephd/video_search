@@ -2,7 +2,7 @@ document.getElementById('submit').addEventListener('click', function() {
     const prompt = document.getElementById('prompt').value;
   
     // Replace with your server's URL
-    const url = 'http://127.0.0.1:5000/get-timestamps';
+    const url = 'https://videosearch-xwnapftbuyza7omg7wbwei.streamlit.app/get-timestamps';
   
     fetch(url, {
       method: 'POST',

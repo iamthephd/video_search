@@ -1,16 +1,23 @@
-import streamlit as st
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 from video_search import get_timestamp_list
 
-# Streamlit UI
-st.title("YouTube Timestamp Finder")
 
-video_url = st.text_input("Enter YouTube Video URL")
-prompt = st.text_input("Enter your prompt")
+app = Flask(__name__)
+CORS(app)
 
-if st.button("Submit"):
-    if video_url and prompt:
-        timestamps = get_timestamp_list(video_url, prompt)
-        st.write("Timestamps:", timestamps)
-    else:
-        st.write("Please enter both a video URL and a prompt.")
+
+@app.route('/get-timestamps', methods=['POST'])
+def get_timestamps():
+    data = request.json
+    video_url = data['video_url']
+    prompt = data['prompt']
+    
+    # Example logic to return dummy timestamps
+    timestamps = get_timestamp_list(video_url, prompt)
+
+    return jsonify({'timestamps': timestamps})
+
+if __name__ == '__main__':
+    app.run(debug=True)
