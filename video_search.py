@@ -5,13 +5,12 @@ import google.generativeai as genai
 from youtube_transcript_api import YouTubeTranscriptApi
 from langchain import PromptTemplate
 
+from api import api_key
 
 # video_url = "https://www.youtube.com/watch?v=v3jGLV-vgJE"
 # prompt = "Find the most exciting move in this game"
 # chunk_size = 15
 
-
-api_key = "AIzaSyCh9Ka-IxW5tpvDRiGohxLbqH8vxi9oITE"
 genai.configure(api_key=api_key)
 
 
