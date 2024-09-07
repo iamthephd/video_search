@@ -1,5 +1,4 @@
 import streamlit as st
-from flask import Flask, request, jsonify
 
 from video_search import get_timestamp_list
 
